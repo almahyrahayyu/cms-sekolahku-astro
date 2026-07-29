@@ -43,6 +43,22 @@ collections:
           - { label: "TikTok", name: "social_tiktok", widget: "string", required: false }
           - { label: "Tema Warna", name: "theme_color", widget: "select", options: ["default", "blue", "green", "purple", "red"] }
           - { label: "Dark Mode", name: "dark_mode", widget: "boolean", default: false }
+          - { label: "━━ HERO / SLIDER ━━", name: "hero_divider", widget: "hidden", default: "" }
+          - { label: "Badge Hero (teks kecil di atas judul)", name: "hero_badge", widget: "string" }
+          - { label: "Judul Hero", name: "hero_title", widget: "string" }
+          - { label: "Subjudul Hero", name: "hero_subtitle", widget: "text" }
+          - { label: "Gambar Slider (foto sekolah/kegiatan)", name: "hero_image", widget: "image", required: false, hint: "Kosongkan untuk pakai kartu gradien bawaan. Ukuran ideal 800x600." }
+          - { label: "Teks Tombol Utama", name: "hero_btn_primary_text", widget: "string" }
+          - { label: "Link Tombol Utama", name: "hero_btn_primary_url", widget: "string" }
+          - { label: "Teks Tombol Kedua", name: "hero_btn_secondary_text", widget: "string" }
+          - { label: "Link Tombol Kedua", name: "hero_btn_secondary_url", widget: "string" }
+          - label: "Statistik (angka di bawah hero)"
+            name: "hero_stats"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string", hint: "Contoh: Siswa, Guru, Prestasi" }
+              - { label: "Angka", name: "value", widget: "string", hint: "Contoh: 207, 85+" }
+              - { label: "Icon (FontAwesome)", name: "icon", widget: "string", hint: "Contoh: user-graduate, chalkboard-teacher, trophy" }
 
   # ============================================
   # P0: NEWS (Berita)
