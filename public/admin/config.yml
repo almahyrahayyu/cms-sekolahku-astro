@@ -4,7 +4,7 @@
 
 backend:
   name: github
-  repo: GANTI-DENGAN-USERNAME/cms-sekolahku-astro
+  repo: almahyrahayyu/cms-sekolahku-astro
   branch: main
 
 media_folder: "public/images"
