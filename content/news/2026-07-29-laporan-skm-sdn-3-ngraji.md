@@ -6,7 +6,7 @@ excerpt: |-
 category: Pengumuman
 tags:
   - spm
-image: ''
+image: /images/0001.jpg
 author: Admin
 date: 2026-07-29T16:39
 published: true
