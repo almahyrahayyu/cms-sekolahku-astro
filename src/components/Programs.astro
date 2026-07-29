@@ -1,0 +1,20 @@
+---
+// src/components/Programs.astro
+import programs from '../../data/programs.yml';
+import SectionTitle from './SectionTitle.astro';
+const items = programs.programs.filter((p: any) => p.show);
+---
+<section class="max-w-[1100px] mx-auto px-5 py-9">
+  <SectionTitle title="Program Unggulan" />
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {items.map((p: any) => (
+      <div class="bg-white rounded-card p-5 shadow-card border border-primary/10 hover:-translate-y-1 transition-transform text-center">
+        <div class="w-14 h-14 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-3">
+          <i class:list={['fas', `fa-${p.icon}`, 'text-2xl text-primary']}></i>
+        </div>
+        <h4 class="font-extrabold text-primary-dark mb-2">{p.title}</h4>
+        <p class="text-sm text-text-muted leading-relaxed">{p.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

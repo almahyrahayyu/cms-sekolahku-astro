@@ -1,0 +1,27 @@
+achievements:
+  - student_name: "Ahmad Fauzi"
+    photo: ""
+    class_name: "Kelas VI"
+    achievement: "Juara 1 Olimpiade Matematika Tingkat Kecamatan"
+    level: "Kecamatan"
+    year: 2026
+    medal: "gold"
+    show: true
+
+  - student_name: "Siti Nurhaliza"
+    photo: ""
+    class_name: "Kelas V"
+    achievement: "Juara 2 Lomba Cerdas Cermat Tingkat Kabupaten"
+    level: "Kota"
+    year: 2025
+    medal: "silver"
+    show: true
+
+  - student_name: "Budi Santoso"
+    photo: ""
+    class_name: "Kelas VI"
+    achievement: "Juara 3 Lomba Pidato Tingkat Kecamatan"
+    level: "Kecamatan"
+    year: 2025
+    medal: "bronze"
+    show: true

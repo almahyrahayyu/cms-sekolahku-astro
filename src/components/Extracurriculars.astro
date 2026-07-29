@@ -1,0 +1,26 @@
+---
+// src/components/Extracurriculars.astro
+import ekskul from '../../data/extracurriculars.yml';
+import SectionTitle from './SectionTitle.astro';
+const items = ekskul.extracurriculars.filter((e: any) => e.show);
+---
+<section class="max-w-[1100px] mx-auto px-5 py-9">
+  <SectionTitle title="Ekstrakurikuler" />
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {items.map((e: any) => (
+      <div class="bg-white rounded-card p-5 shadow-card border border-primary/10 hover:-translate-y-1 transition-transform">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-11 h-11 bg-secondary-light rounded-full flex items-center justify-center shrink-0">
+            <i class:list={['fas', `fa-${e.icon}`, 'text-xl text-primary']}></i>
+          </div>
+          <h4 class="font-extrabold text-primary-dark">{e.name}</h4>
+        </div>
+        <p class="text-sm text-text-muted leading-relaxed mb-3">{e.description}</p>
+        <div class="text-xs text-text-muted font-bold space-y-1">
+          <p><i class="fas fa-clock mr-1.5 text-primary"></i>{e.schedule}</p>
+          <p><i class="fas fa-user mr-1.5 text-primary"></i>{e.coach}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

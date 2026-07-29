@@ -1,0 +1,43 @@
+---
+// src/pages/[slug].astro
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileDrawer from '../components/MobileDrawer.astro';
+import Footer from '../components/Footer.astro';
+import settings from '../../data/settings.yml';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', ({ data }) => data.published === true);
+  return pages.map((page) => ({
+    params: { slug: page.data.slug || page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+<Layout title={`${page.data.title} — ${settings.site_name}`} description={page.data.excerpt}>
+  <TopBar />
+  <Header />
+  <Navbar />
+  <MobileDrawer />
+
+  <main class="flex-1">
+    <div class="bg-gradient-to-r from-primary to-primary-dark px-6 py-10 text-center text-white">
+      <span class="inline-block bg-white/20 text-xs font-bold px-3 py-1 rounded-full mb-2">Halaman</span>
+      <h1 class="text-3xl font-extrabold">{page.data.title}</h1>
+    </div>
+
+    <article class="max-w-3xl mx-auto px-5 py-9">
+      <div class="bg-white rounded-card p-8 shadow-card prose max-w-none text-[0.98rem] leading-relaxed">
+        <Content />
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

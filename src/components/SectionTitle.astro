@@ -1,0 +1,8 @@
+---
+// src/components/SectionTitle.astro
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+<h2 class="text-[1.4rem] text-primary-dark mb-5 flex items-center gap-2.5 font-extrabold font-display after:content-[''] after:flex-1 after:h-[3px] after:bg-primary-light after:rounded">
+  {title}
+</h2>

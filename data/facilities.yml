@@ -1,0 +1,30 @@
+facilities:
+  - name: "Ruang Kelas"
+    icon: "school"
+    count: 6
+    show: true
+
+  - name: "Perpustakaan"
+    icon: "book"
+    count: 1
+    show: true
+
+  - name: "Lapangan Olahraga"
+    icon: "futbol"
+    count: 1
+    show: true
+
+  - name: "Ruang Guru"
+    icon: "chalkboard-teacher"
+    count: 1
+    show: true
+
+  - name: "Toilet"
+    icon: "restroom"
+    count: 2
+    show: true
+
+  - name: "Tempat Ibadah"
+    icon: "mosque"
+    count: 1
+    show: true

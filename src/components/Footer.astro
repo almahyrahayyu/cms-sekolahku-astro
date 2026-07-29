@@ -1,0 +1,36 @@
+---
+// src/components/Footer.astro
+import settings from '../../data/settings.yml';
+import menu from '../../data/menu.yml';
+const quickLinks = menu.items.filter((i: any) => i.show).slice(0, 6);
+---
+<footer class="bg-primary-dark text-white px-5 pt-9 pb-4 mt-auto">
+  <div class="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    <div>
+      <h4 class="mb-3 text-secondary font-display text-lg">{settings.site_name}</h4>
+      <p class="text-sm leading-relaxed text-white/90">{settings.footer_description}</p>
+      <div class="flex gap-3 mt-4">
+        {settings.social_facebook !== '#' && <a href={settings.social_facebook} class="text-white/90 hover:text-secondary text-lg"><i class="fab fa-facebook"></i></a>}
+        {settings.social_instagram !== '#' && <a href={settings.social_instagram} class="text-white/90 hover:text-secondary text-lg"><i class="fab fa-instagram"></i></a>}
+        {settings.social_youtube !== '#' && <a href={settings.social_youtube} class="text-white/90 hover:text-secondary text-lg"><i class="fab fa-youtube"></i></a>}
+        {settings.social_tiktok !== '#' && <a href={settings.social_tiktok} class="text-white/90 hover:text-secondary text-lg"><i class="fab fa-tiktok"></i></a>}
+      </div>
+    </div>
+    <div>
+      <h4 class="mb-3 text-secondary font-display text-lg">Tautan Cepat</h4>
+      {quickLinks.map((link: any) => (
+        <p class="mb-1.5"><a href={link.url} class="text-sm text-white/90 no-underline hover:text-secondary">&bull; {link.label}</a></p>
+      ))}
+    </div>
+    <div>
+      <h4 class="mb-3 text-secondary font-display text-lg">Kontak</h4>
+      <p class="text-sm text-white/90 leading-relaxed mb-2"><i class="fas fa-map-marker-alt mr-2"></i>{settings.contact_address}</p>
+      <p class="text-sm text-white/90 mb-2"><i class="fas fa-phone mr-2"></i>{settings.contact_phone}</p>
+      <p class="text-sm text-white/90 mb-2"><i class="fas fa-envelope mr-2"></i>{settings.contact_email}</p>
+      <p class="text-sm text-white/90"><i class="fas fa-clock mr-2"></i>{settings.contact_hours}</p>
+    </div>
+  </div>
+  <div class="text-center pt-4 border-t border-white/20 text-xs text-white/80">
+    {settings.footer_copyright}
+  </div>
+</footer>

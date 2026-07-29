@@ -1,0 +1,27 @@
+---
+// src/components/NewsGrid.astro
+import SectionTitle from './SectionTitle.astro';
+interface Props { posts: any[]; }
+const { posts } = Astro.props;
+const latest = posts.slice(0, 3);
+---
+<section class="max-w-[1100px] mx-auto px-5 py-9">
+  <SectionTitle title="Berita & Artikel" />
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {latest.map((post: any) => (
+      <a href={`/news/${post.slug}/`} class="bg-white rounded-card p-4 shadow-card border border-primary/10 hover:-translate-y-1 transition-transform no-underline block">
+        <div class="h-[120px] bg-primary-light rounded-[10px] mb-3 flex items-center justify-center text-primary text-3xl">
+          <i class="fas fa-newspaper"></i>
+        </div>
+        <span class="text-[0.7rem] bg-secondary-light text-primary-dark font-bold px-2 py-0.5 rounded">{post.data.category}</span>
+        <h4 class="text-[0.95rem] font-extrabold text-primary-dark mt-2 mb-1.5 leading-tight">{post.data.title}</h4>
+        <p class="text-xs text-text-muted"><i class="fas fa-calendar mr-1"></i>{new Date(post.data.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+      </a>
+    ))}
+  </div>
+  <div class="text-center mt-5">
+    <a href="/news/" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-extrabold no-underline text-sm hover:bg-primary-dark transition-colors">
+      Lihat Semua Berita <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</section>

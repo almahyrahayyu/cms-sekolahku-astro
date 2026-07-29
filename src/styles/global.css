@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* === WARNA (dari web SDN 3 Ngraji eksisting) === */
+  --color-primary: #1a3a6b;
+  --color-primary-light: #e8edf5;
+  --color-primary-dark: #0f2550;
+  --color-secondary: #f5c842;
+  --color-secondary-light: #fdf5d6;
+  --color-accent: #d32f2f;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-text-main: #2d3436;
+  --color-text-muted: #7f8c8d;
+  --color-bg-light: #f5f6f9;
+
+  /* === TIPOGRAFI === */
+  --font-display: 'Baloo 2', cursive;
+  --font-body: 'Nunito', sans-serif;
+
+  /* === RADIUS & SHADOW === */
+  --radius-card: 16px;
+  --shadow-card: 0 8px 24px rgba(26, 58, 107, 0.10);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-light);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}

@@ -1,0 +1,43 @@
+---
+// src/pages/spmb.astro
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import settings from '../../data/settings.yml';
+const wa = settings.wa_admin;
+---
+<ServiceLayout
+  title="SPMB Online 2026/2027"
+  badge="Penerimaan Murid Baru"
+  subtitle="Sistem Penerimaan Murid Baru (SPMB) — dahulu dikenal sebagai PPDB. Silakan isi formulir pendaftaran di bawah ini."
+  icon="user-plus"
+>
+  <div class="bg-secondary-light border border-secondary rounded-card p-4 mb-5 text-sm text-primary-dark">
+    <i class="fas fa-info-circle mr-1.5"></i> Istilah <b>PPDB</b> resmi diganti menjadi <b>SPMB</b> (Sistem Penerimaan Murid Baru) sesuai Permendikdasmen No 3 Tahun 2025.
+  </div>
+
+  <div class="bg-white rounded-card p-6 shadow-card">
+    <form name="spmb" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="spmb" />
+      <label class="block text-sm font-extrabold text-primary-dark mb-1">Nama Calon Murid *</label>
+      <input name="nama_murid" required class="w-full px-3 py-2.5 border border-[#d0d9e8] rounded-lg text-sm mb-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15" />
+
+      <label class="block text-sm font-extrabold text-primary-dark mb-1">Nama Orang Tua / Wali *</label>
+      <input name="nama_ortu" required class="w-full px-3 py-2.5 border border-[#d0d9e8] rounded-lg text-sm mb-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15" />
+
+      <label class="block text-sm font-extrabold text-primary-dark mb-1">Asal TK / RA *</label>
+      <input name="asal_sekolah" required class="w-full px-3 py-2.5 border border-[#d0d9e8] rounded-lg text-sm mb-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15" />
+
+      <label class="block text-sm font-extrabold text-primary-dark mb-1">No. HP / WhatsApp *</label>
+      <input name="no_hp" type="tel" required placeholder="08xxxxxxxxxx" class="w-full px-3 py-2.5 border border-[#d0d9e8] rounded-lg text-sm mb-4 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15" />
+
+      <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-full font-extrabold cursor-pointer shadow-[0_4px_12px_rgba(26,58,107,0.4)] hover:bg-primary-dark transition-colors">
+        <i class="fas fa-paper-plane mr-2"></i>Daftar Sekarang
+      </button>
+    </form>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href={`https://wa.me/${wa}?text=${encodeURIComponent('Halo, saya ingin bertanya tentang SPMB SDN 3 Ngraji')}`} target="_blank" class="inline-flex items-center gap-2 bg-success text-white px-6 py-2.5 rounded-full font-extrabold no-underline text-sm">
+      <i class="fab fa-whatsapp"></i> Konfirmasi via WhatsApp
+    </a>
+  </div>
+</ServiceLayout>

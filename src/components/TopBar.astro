@@ -1,0 +1,15 @@
+---
+// src/components/TopBar.astro
+import settings from '../../data/settings.yml';
+---
+<div class="bg-primary-light border-b-2 border-dashed border-primary px-6 py-2 hidden md:flex justify-between items-center text-sm flex-wrap gap-2">
+  <span class="inline-flex items-center gap-1.5 text-primary-dark font-bold">
+    <i class="fas fa-id-card"></i> NPSN: {settings.npsn}
+  </span>
+  <span class="inline-flex items-center gap-1.5 text-primary-dark font-bold">
+    <i class="fas fa-envelope"></i> {settings.contact_email}
+  </span>
+  <span class="inline-flex items-center gap-1.5 text-primary-dark font-bold">
+    <i class="fas fa-map-marker-alt"></i> {settings.contact_address_short}
+  </span>
+</div>

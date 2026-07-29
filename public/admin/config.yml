@@ -1,0 +1,312 @@
+# Sveltia CMS Configuration — CMS Sekolahku (Sveltia + Astro)
+# Dokumentasi: https://sveltiacms.app/en/docs
+# GANTI repo di bawah dengan repo GitHub Anda sebelum deploy.
+
+backend:
+  name: github
+  repo: GANTI-DENGAN-USERNAME/cms-sekolahku-astro
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+site_url: "https://sdn3ngraji.netlify.app"
+display_url: "https://sdn3ngraji.netlify.app"
+
+locale: "id"
+
+collections:
+
+  # ============================================
+  # P0: SETTINGS (Profil Sekolah)
+  # ============================================
+  - name: "settings"
+    label: "⚙️ Pengaturan Sekolah"
+    files:
+      - name: "general"
+        label: "Pengaturan Umum"
+        file: "data/settings.yml"
+        fields:
+          - { label: "Nama Sekolah", name: "site_name", widget: "string" }
+          - { label: "Tagline", name: "site_tagline", widget: "string" }
+          - { label: "Deskripsi", name: "site_description", widget: "text" }
+          - { label: "NPSN", name: "npsn", widget: "string" }
+          - { label: "Jenjang", name: "jenjang", widget: "select", options: ["SD", "MI", "SMP", "MTs", "SMA", "SMK"] }
+          - { label: "Telepon", name: "contact_phone", widget: "string" }
+          - { label: "Email", name: "contact_email", widget: "string" }
+          - { label: "Alamat", name: "contact_address", widget: "text" }
+          - { label: "Jam Operasional", name: "contact_hours", widget: "string" }
+          - { label: "WA Admin (628xx)", name: "wa_admin", widget: "string" }
+          - { label: "Facebook", name: "social_facebook", widget: "string", required: false }
+          - { label: "Instagram", name: "social_instagram", widget: "string", required: false }
+          - { label: "YouTube", name: "social_youtube", widget: "string", required: false }
+          - { label: "TikTok", name: "social_tiktok", widget: "string", required: false }
+          - { label: "Tema Warna", name: "theme_color", widget: "select", options: ["default", "blue", "green", "purple", "red"] }
+          - { label: "Dark Mode", name: "dark_mode", widget: "boolean", default: false }
+
+  # ============================================
+  # P0: NEWS (Berita)
+  # ============================================
+  - name: "news"
+    label: "📰 Berita"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Ringkasan", name: "excerpt", widget: "text" }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Kegiatan", "Prestasi", "Pengumuman", "Akademik", "Umum"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Gambar", name: "image", widget: "image", required: false }
+      - { label: "Penulis", name: "author", widget: "string", default: "Admin" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Konten", name: "body", widget: "markdown" }
+
+  # ============================================
+  # P0: PAGES (Halaman Statis)
+  # ============================================
+  - name: "pages"
+    label: "📄 Halaman"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string" }
+      - { label: "Ringkasan", name: "excerpt", widget: "text", required: false }
+      - { label: "Gambar", name: "image", widget: "image", required: false }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Konten", name: "body", widget: "markdown" }
+
+  # ============================================
+  # P0: TEACHERS (Guru)
+  # ============================================
+  - name: "teachers"
+    label: "👨‍🏫 Guru & Staff"
+    files:
+      - name: "teachers"
+        label: "Daftar Guru"
+        file: "data/teachers.yml"
+        fields:
+          - label: "Guru"
+            name: "teachers"
+            widget: "list"
+            fields:
+              - { label: "Nama", name: "name", widget: "string" }
+              - { label: "Jabatan", name: "role", widget: "string" }
+              - { label: "Foto", name: "photo", widget: "image", required: false }
+              - { label: "Pendidikan", name: "education", widget: "string", required: false }
+              - { label: "Telepon", name: "phone", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P0: GALLERY (Galeri)
+  # ============================================
+  - name: "galleries"
+    label: "🖼️ Galeri"
+    files:
+      - name: "galleries"
+        label: "Album Foto"
+        file: "data/galleries.yml"
+        fields:
+          - label: "Album"
+            name: "galleries"
+            widget: "list"
+            fields:
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Kategori", name: "category", widget: "string" }
+              - { label: "Foto-foto", name: "images", widget: "list", field: { widget: "image" } }
+              - { label: "Deskripsi", name: "description", widget: "text", required: false }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P0: MENU (Navigasi)
+  # ============================================
+  - name: "menu"
+    label: "🧭 Menu Navigasi"
+    files:
+      - name: "menu"
+        label: "Kelola Menu"
+        file: "data/menu.yml"
+        fields:
+          - label: "Item Menu"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Icon (FontAwesome)", name: "icon", widget: "string", hint: "Contoh: home, newspaper, user-plus, headset" }
+              - { label: "Tipe", name: "type", widget: "select", options: ["internal", "external", "page"] }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+              - label: "Sub-menu"
+                name: "children"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Icon (FontAwesome)", name: "icon", widget: "string", required: false }
+                  - { label: "Tipe", name: "type", widget: "select", options: ["internal", "external", "page"] }
+                  - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P1: ACHIEVEMENTS (Prestasi)
+  # ============================================
+  - name: "achievements"
+    label: "🏆 Prestasi"
+    files:
+      - name: "achievements"
+        label: "Daftar Prestasi"
+        file: "data/achievements.yml"
+        fields:
+          - label: "Prestasi"
+            name: "achievements"
+            widget: "list"
+            fields:
+              - { label: "Nama Siswa", name: "student_name", widget: "string" }
+              - { label: "Foto", name: "photo", widget: "image", required: false }
+              - { label: "Kelas", name: "class_name", widget: "string" }
+              - { label: "Prestasi", name: "achievement", widget: "string" }
+              - { label: "Tingkat", name: "level", widget: "select", options: ["Nasional", "Provinsi", "Kota", "Kecamatan"] }
+              - { label: "Tahun", name: "year", widget: "number" }
+              - { label: "Medali", name: "medal", widget: "select", options: ["gold", "silver", "bronze"] }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P1: PROGRAMS (Program Unggulan)
+  # ============================================
+  - name: "programs"
+    label: "💎 Program Unggulan"
+    files:
+      - name: "programs"
+        label: "Daftar Program"
+        file: "data/programs.yml"
+        fields:
+          - label: "Program"
+            name: "programs"
+            widget: "list"
+            fields:
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Deskripsi", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Gambar", name: "image", widget: "image", required: false }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P1: EXTRACURRICULARS (Ekskul)
+  # ============================================
+  - name: "extracurriculars"
+    label: "⚽ Ekstrakurikuler"
+    files:
+      - name: "extracurriculars"
+        label: "Daftar Ekskul"
+        file: "data/extracurriculars.yml"
+        fields:
+          - label: "Ekskul"
+            name: "extracurriculars"
+            widget: "list"
+            fields:
+              - { label: "Nama", name: "name", widget: "string" }
+              - { label: "Deskripsi", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Gambar", name: "image", widget: "image", required: false }
+              - { label: "Jadwal", name: "schedule", widget: "string", required: false }
+              - { label: "Pelatih", name: "coach", widget: "string", required: false }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P1: EVENTS (Agenda)
+  # ============================================
+  - name: "events"
+    label: "📅 Agenda"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal Mulai", name: "date_start", widget: "datetime", type: "date" }
+      - { label: "Tanggal Selesai", name: "date_end", widget: "datetime", type: "date", required: false }
+      - { label: "Waktu", name: "time", widget: "string" }
+      - { label: "Lokasi", name: "location", widget: "string" }
+      - { label: "Deskripsi", name: "body", widget: "markdown" }
+
+  # ============================================
+  # P1: TESTIMONIALS (Testimoni)
+  # ============================================
+  - name: "testimonials"
+    label: "💬 Testimoni"
+    files:
+      - name: "testimonials"
+        label: "Daftar Testimoni"
+        file: "data/testimonials.yml"
+        fields:
+          - label: "Testimoni"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Nama", name: "name", widget: "string" }
+              - { label: "Peran", name: "role", widget: "string" }
+              - { label: "Foto", name: "photo", widget: "image", required: false }
+              - { label: "Pesan", name: "message", widget: "text" }
+              - { label: "Rating", name: "rating", widget: "number", min: 1, max: 5 }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P1: FAQ
+  # ============================================
+  - name: "faq"
+    label: "❓ FAQ"
+    files:
+      - name: "faq"
+        label: "Pertanyaan Umum"
+        file: "data/faq.yml"
+        fields:
+          - label: "FAQ"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Pertanyaan", name: "question", widget: "string" }
+              - { label: "Jawaban", name: "answer", widget: "text" }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P1: DOWNLOADS (Pusat Unduhan)
+  # ============================================
+  - name: "downloads"
+    label: "📥 Unduhan"
+    files:
+      - name: "downloads"
+        label: "Daftar File"
+        file: "data/downloads.yml"
+        fields:
+          - label: "File"
+            name: "downloads"
+            widget: "list"
+            fields:
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Deskripsi", name: "description", widget: "text", required: false }
+              - { label: "File", name: "file", widget: "file" }
+              - { label: "Kategori", name: "category", widget: "select", options: ["Akademik", "PPDB", "Administrasi", "Umum"] }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }
+
+  # ============================================
+  # P1: FACILITIES (Fasilitas)
+  # ============================================
+  - name: "facilities"
+    label: "🏫 Fasilitas"
+    files:
+      - name: "facilities"
+        label: "Daftar Fasilitas"
+        file: "data/facilities.yml"
+        fields:
+          - label: "Fasilitas"
+            name: "facilities"
+            widget: "list"
+            fields:
+              - { label: "Nama", name: "name", widget: "string" }
+              - { label: "Icon (FontAwesome)", name: "icon", widget: "string" }
+              - { label: "Jumlah", name: "count", widget: "number", required: false }
+              - { label: "Tampilkan", name: "show", widget: "boolean", default: true }

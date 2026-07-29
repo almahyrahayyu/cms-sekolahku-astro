@@ -1,0 +1,24 @@
+programs:
+  - title: "Literasi Digital"
+    description: "Pengenalan teknologi dan komputer sejak dini untuk mempersiapkan siswa menghadapi era digital"
+    icon: "laptop"
+    image: ""
+    show: true
+
+  - title: "Tahfidz Al-Quran"
+    description: "Program hafalan Al-Quran untuk membentuk karakter religius siswa"
+    icon: "book-open"
+    image: ""
+    show: true
+
+  - title: "Penguatan Literasi"
+    description: "Program membaca dan menulis untuk meningkatkan kemampuan literasi siswa"
+    icon: "book-reader"
+    image: ""
+    show: true
+
+  - title: "Sekolah Adiwiyata"
+    description: "Program peduli lingkungan untuk menciptakan sekolah yang bersih dan hijau"
+    icon: "leaf"
+    image: ""
+    show: true

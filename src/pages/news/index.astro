@@ -1,0 +1,59 @@
+---
+// src/pages/news/index.astro
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Header from '../../components/Header.astro';
+import Navbar from '../../components/Navbar.astro';
+import MobileDrawer from '../../components/MobileDrawer.astro';
+import Footer from '../../components/Footer.astro';
+import settings from '../../../data/settings.yml';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('news', ({ data }) => data.published === true))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((post) => ({ ...post, slug: post.id }));
+
+const categories = [...new Set(posts.map((p) => p.data.category).filter(Boolean))];
+---
+<Layout title={`Berita — ${settings.site_name}`} description="Berita dan artikel terbaru seputar kegiatan sekolah">
+  <TopBar />
+  <Header />
+  <Navbar />
+  <MobileDrawer />
+
+  <main class="flex-1">
+    <div class="bg-gradient-to-r from-primary to-primary-dark px-6 py-10 text-center text-white">
+      <span class="inline-block bg-white/20 text-xs font-bold px-3 py-1 rounded-full mb-2">Berita & Artikel</span>
+      <h1 class="text-3xl font-extrabold">Baca Berita Terbaru</h1>
+      <p class="text-white/80 mt-2 text-sm">Informasi terkini seputar kegiatan dan prestasi di lingkungan {settings.site_name}</p>
+    </div>
+
+    <div class="max-w-[1100px] mx-auto px-5 py-9">
+      <div class="flex gap-2 flex-wrap mb-6">
+        <a href="/news/" class="bg-primary text-white text-sm font-bold px-4 py-1.5 rounded-full no-underline">Semua</a>
+        {categories.map((cat) => (
+          <span class="bg-primary-light text-primary-dark text-sm font-bold px-4 py-1.5 rounded-full">{cat}</span>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {posts.map((post) => (
+          <a href={`/news/${post.slug}/`} class="bg-white rounded-card p-4 shadow-card border border-primary/10 hover:-translate-y-1 transition-transform no-underline block">
+            <div class="h-[150px] bg-primary-light rounded-[10px] mb-3 flex items-center justify-center text-primary text-4xl">
+              <i class="fas fa-newspaper"></i>
+            </div>
+            <div class="flex gap-2 mb-2">
+              <span class="text-[0.7rem] bg-secondary-light text-primary-dark font-bold px-2 py-0.5 rounded">{post.data.category}</span>
+              {post.data.featured && <span class="text-[0.7rem] bg-accent text-white font-bold px-2 py-0.5 rounded">Unggulan</span>}
+            </div>
+            <h3 class="text-base font-extrabold text-primary-dark mb-1.5 leading-tight">{post.data.title}</h3>
+            <p class="text-sm text-text-muted mb-2 line-clamp-2">{post.data.excerpt}</p>
+            <p class="text-xs text-text-muted"><i class="fas fa-calendar mr-1"></i>{new Date(post.data.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })} · {post.data.author}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

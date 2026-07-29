@@ -1,0 +1,16 @@
+faq:
+  - question: "Bagaimana cara mendaftar di SDN 3 Ngraji?"
+    answer: "Pendaftaran dilakukan secara online melalui menu SPMB di website ini, atau datang langsung ke sekolah pada jam kerja dengan membawa berkas persyaratan."
+    show: true
+
+  - question: "Berapa biaya sekolah di SDN 3 Ngraji?"
+    answer: "SDN 3 Ngraji adalah sekolah negeri, sehingga biaya pendidikan gratis (BOS). Tidak ada pungutan biaya SPP."
+    show: true
+
+  - question: "Apa saja syarat pendaftaran siswa baru?"
+    answer: "Syarat pendaftaran: fotokopi Akta Kelahiran, fotokopi Kartu Keluarga, surat keterangan sehat, dan pas foto 3x4 sebanyak 2 lembar."
+    show: true
+
+  - question: "Kapan jam belajar mengajar?"
+    answer: "Kegiatan belajar mengajar dilaksanakan Senin sampai Sabtu, mulai pukul 07.00 hingga 13.00 WIB (sehari penuh)."
+    show: true

@@ -1,0 +1,49 @@
+---
+// src/components/MobileDrawer.astro
+import menu from '../../data/menu.yml';
+import settings from '../../data/settings.yml';
+const items = menu.items.filter((i: any) => i.show);
+const currentPath = Astro.url.pathname;
+---
+<div id="nav-overlay" class="fixed inset-0 bg-black/45 z-[199] opacity-0 pointer-events-none transition-opacity duration-250 [&.open]:opacity-100 [&.open]:pointer-events-auto"></div>
+<aside id="mobile-drawer" class="fixed top-0 left-0 w-[280px] max-w-[80vw] h-dvh bg-white z-[200] -translate-x-full transition-transform duration-300 flex flex-col shadow-[4px_0_20px_rgba(0,0,0,0.15)] [&.open]:translate-x-0">
+  <div class="bg-gradient-to-br from-primary to-primary-dark p-5 flex items-center gap-3 text-white">
+    <img src="/images/logo.jpg" alt="Logo" class="w-11 h-11 rounded-full object-cover border-2 border-secondary"
+         onerror="this.style.display='none'" />
+    <div>
+      <div class="font-display text-base font-bold leading-tight">{settings.site_name}</div>
+      <div class="text-[0.72rem] opacity-85">{settings.site_tagline}</div>
+    </div>
+  </div>
+  <ul class="flex-1 overflow-y-auto list-none m-0 p-2">
+    {items.map((item: any) => {
+      const isActive = currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url));
+      return (
+        <>
+          <li>
+            <a href={item.url}
+               class:list={[
+                 'flex items-center gap-3 px-5 py-3.5 text-text-main no-underline font-bold text-[0.95rem] border-l-[3px] border-transparent transition-colors min-h-[52px]',
+                 { 'bg-primary-light text-primary-dark border-l-primary': isActive }
+               ]}>
+              <i class:list={['fas', `fa-${item.icon}`, 'w-[22px] text-center text-primary']}></i> {item.label}
+            </a>
+          </li>
+          {item.children && item.children.filter((c: any) => c.show).map((child: any) => (
+            <li>
+              <a href={child.url} class="flex items-center gap-3 pl-12 pr-5 py-2.5 text-text-muted no-underline font-semibold text-sm border-l-[3px] border-transparent hover:bg-primary-light transition-colors">
+                {child.icon && <i class:list={['fas', `fa-${child.icon}`, 'w-[22px] text-center text-primary text-xs']}></i>}
+                {child.label}
+              </a>
+            </li>
+          ))}
+        </>
+      );
+    })}
+  </ul>
+  <div class="p-4 border-t border-gray-200">
+    <a href="/admin/" class="flex items-center justify-center gap-2 bg-secondary text-primary-dark px-4 py-2.5 rounded-full font-extrabold no-underline text-sm">
+      <i class="fas fa-lock"></i> Portal Admin
+    </a>
+  </div>
+</aside>

@@ -1,0 +1,86 @@
+# Struktur menu — diwarisi dari web SDN 3 Ngraji eksisting (10 menu)
+items:
+  - label: "Beranda"
+    url: "/"
+    icon: "home"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "Profil"
+    url: "/profil"
+    icon: "school-flag"
+    type: "internal"
+    show: true
+    children:
+      - label: "Visi Misi"
+        url: "/visi-misi"
+        icon: "bullseye"
+        type: "internal"
+        show: true
+      - label: "Sejarah"
+        url: "/sejarah"
+        icon: "landmark"
+        type: "internal"
+        show: true
+      - label: "Sambutan Kepsek"
+        url: "/sambutan-kepsek"
+        icon: "quote-right"
+        type: "internal"
+        show: true
+
+  - label: "Akademik"
+    url: "/akademik"
+    icon: "graduation-cap"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "Berita"
+    url: "/news"
+    icon: "newspaper"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "Fasilitas"
+    url: "/fasilitas"
+    icon: "building"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "SPMB"
+    url: "/spmb"
+    icon: "user-plus"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "Mutasi Masuk"
+    url: "/mutasi-masuk"
+    icon: "sign-in-alt"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "Mutasi Keluar"
+    url: "/mutasi-keluar"
+    icon: "sign-out-alt"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "Kotak Saran"
+    url: "/saran"
+    icon: "comments"
+    type: "internal"
+    show: true
+    children: []
+
+  - label: "Pengaduan"
+    url: "/pengaduan"
+    icon: "headset"
+    type: "internal"
+    show: true
+    children: []

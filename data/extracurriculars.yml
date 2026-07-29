@@ -1,0 +1,32 @@
+extracurriculars:
+  - name: "Pramuka"
+    description: "Kegiatan kepanduan untuk membentuk karakter disiplin dan mandiri"
+    icon: "compass"
+    image: ""
+    schedule: "Jumat, 14.00 - 16.00"
+    coach: "Bpk. Ahmad"
+    show: true
+
+  - name: "Sepak Bola"
+    description: "Olahraga dan kerjasama tim untuk kesehatan jasmani"
+    icon: "futbol"
+    image: ""
+    schedule: "Rabu, 14.00 - 16.00"
+    coach: "Bpk. Budi"
+    show: true
+
+  - name: "Seni Tari"
+    description: "Melestarikan budaya melalui seni tari tradisional"
+    icon: "music"
+    image: ""
+    schedule: "Sabtu, 10.00 - 12.00"
+    coach: "Ibu Sari"
+    show: true
+
+  - name: "Menggambar"
+    description: "Mengembangkan kreativitas dan imajinasi siswa"
+    icon: "paint-brush"
+    image: ""
+    schedule: "Selasa, 14.00 - 15.30"
+    coach: "Ibu Dewi"
+    show: true

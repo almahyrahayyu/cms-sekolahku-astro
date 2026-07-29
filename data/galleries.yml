@@ -1,0 +1,14 @@
+galleries:
+  - title: "Upacara Bendera"
+    category: "Kegiatan"
+    images:
+      - "/images/galeri/upacara1.jpg"
+    description: "Upacara bendera rutin setiap hari Senin"
+    show: true
+
+  - title: "Kegiatan Belajar Mengajar"
+    category: "Akademik"
+    images:
+      - "/images/galeri/kbm1.jpg"
+    description: "Suasana belajar di kelas"
+    show: true

@@ -1,0 +1,12 @@
+downloads:
+  - title: "Kalender Akademik 2026/2027"
+    description: "Jadwal kegiatan belajar mengajar selama satu tahun ajaran"
+    file: "/files/kalender-akademik-2026.pdf"
+    category: "Akademik"
+    show: true
+
+  - title: "Formulir SPMB 2026"
+    description: "Formulir pendaftaran Sistem Penerimaan Murid Baru"
+    file: "/files/form-spmb-2026.pdf"
+    category: "PPDB"
+    show: true

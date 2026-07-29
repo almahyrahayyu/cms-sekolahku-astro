@@ -1,0 +1,28 @@
+---
+// src/pages/kontak.astro
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileDrawer from '../components/MobileDrawer.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import settings from '../../data/settings.yml';
+---
+<Layout title={`Kontak — ${settings.site_name}`} description="Hubungi kami untuk informasi lebih lanjut">
+  <TopBar />
+  <Header />
+  <Navbar />
+  <MobileDrawer />
+  <main class="flex-1">
+    <div class="bg-gradient-to-r from-primary to-primary-dark px-6 py-10 text-center text-white">
+      <span class="inline-flex items-center gap-1.5 bg-white/20 text-xs font-bold px-3 py-1 rounded-full mb-2">
+        <i class="fas fa-address-card"></i> Kontak
+      </span>
+      <h1 class="text-3xl font-extrabold">Hubungi Kami</h1>
+      <p class="text-white/80 mt-2 text-sm">Silakan hubungi kami untuk informasi lebih lanjut</p>
+    </div>
+    <ContactSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,55 @@
+---
+// src/components/Navbar.astro
+import menu from '../../data/menu.yml';
+const items = menu.items.filter((i: any) => i.show);
+const currentPath = Astro.url.pathname;
+---
+<nav class="bg-gradient-to-r from-primary to-primary-dark px-6 flex justify-between items-center sticky top-0 z-[100] shadow-[0_4px_15px_rgba(15,37,80,0.25)]">
+  <button id="hamburger-btn" class="md:hidden bg-transparent border-none text-white text-2xl cursor-pointer py-2 px-3 rounded shrink-0" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="hidden md:flex list-none gap-1 overflow-x-auto m-0 p-0 min-w-0 flex-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    {items.map((item: any) => {
+      const isActive = currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url));
+      return (
+        <li class="relative group">
+          <a href={item.url}
+             class:list={[
+               'flex items-center gap-2 px-4 py-3.5 text-white no-underline font-bold text-[0.92rem] rounded-lg whitespace-nowrap transition-colors',
+               { 'bg-black/20 text-secondary': isActive }
+             ]}>
+            <i class:list={['fas', `fa-${item.icon}`]}></i> {item.label}
+            {item.children && item.children.length > 0 && <i class="fas fa-caret-down text-xs ml-1"></i>}
+          </a>
+          {item.children && item.children.length > 0 && (
+            <ul class="absolute left-0 top-full hidden group-hover:block bg-white min-w-[200px] rounded-lg shadow-card list-none m-0 p-2 z-50">
+              {item.children.filter((c: any) => c.show).map((child: any) => (
+                <li>
+                  <a href={child.url} class="flex items-center gap-2 px-3 py-2.5 text-text-main no-underline font-bold text-sm rounded-lg hover:bg-primary-light hover:text-primary-dark transition-colors">
+                    {child.icon && <i class:list={['fas', `fa-${child.icon}`, 'text-primary w-5 text-center']}></i>}
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+  <a href="/admin/" class="bg-secondary text-primary-dark border-none px-4 py-2 rounded-full font-extrabold cursor-pointer flex items-center gap-1.5 whitespace-nowrap text-sm no-underline my-2 ml-3 shrink-0">
+    <i class="fas fa-lock"></i> Portal Admin
+  </a>
+</nav>
+
+<script>
+  const btn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  const overlay = document.getElementById('nav-overlay');
+  function toggleDrawer() {
+    drawer?.classList.toggle('open');
+    overlay?.classList.toggle('open');
+  }
+  btn?.addEventListener('click', toggleDrawer);
+  overlay?.addEventListener('click', toggleDrawer);
+</script>

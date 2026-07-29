@@ -1,0 +1,23 @@
+---
+// src/components/GalleryGrid.astro
+import galleries from '../../data/galleries.yml';
+import SectionTitle from './SectionTitle.astro';
+const items = galleries.galleries.filter((g: any) => g.show);
+---
+<section class="max-w-[1100px] mx-auto px-5 py-9">
+  <SectionTitle title="Galeri" />
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {items.map((g: any) => (
+      <div class="bg-white rounded-card p-2 shadow-card border border-primary/10 hover:-translate-y-1 transition-transform">
+        <div class="w-full h-40 bg-gradient-to-br from-primary-light to-primary/20 rounded-xl flex flex-col items-center justify-center text-primary mb-2">
+          <i class="fas fa-images text-3xl mb-2"></i>
+          <span class="text-xs font-bold px-2 text-center">{g.title}</span>
+        </div>
+        <div class="px-1 pb-1">
+          <span class="text-[0.7rem] bg-primary-light text-primary-dark font-bold px-2 py-0.5 rounded">{g.category}</span>
+          <p class="text-xs text-text-muted mt-1">{g.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

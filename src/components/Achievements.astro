@@ -1,0 +1,34 @@
+---
+// src/components/Achievements.astro
+import achievements from '../../data/achievements.yml';
+import SectionTitle from './SectionTitle.astro';
+const items = achievements.achievements.filter((a: any) => a.show);
+const medalColor: Record<string, string> = {
+  gold: 'bg-yellow-100 text-yellow-700',
+  silver: 'bg-gray-200 text-gray-600',
+  bronze: 'bg-orange-100 text-orange-700',
+};
+const medalIcon: Record<string, string> = { gold: 'medal', silver: 'medal', bronze: 'medal' };
+---
+<section class="max-w-[1100px] mx-auto px-5 py-9">
+  <SectionTitle title="Prestasi Siswa" />
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {items.map((a: any) => (
+      <div class="bg-white rounded-card p-5 shadow-card border border-primary/10 hover:-translate-y-1 transition-transform">
+        <div class="flex items-start gap-3">
+          <div class:list={['w-11 h-11 rounded-full flex items-center justify-center shrink-0', medalColor[a.medal] || medalColor.gold]}>
+            <i class:list={['fas', `fa-${medalIcon[a.medal] || 'medal'}`, 'text-xl']}></i>
+          </div>
+          <div class="flex-1">
+            <h4 class="font-extrabold text-primary-dark text-sm leading-tight mb-1">{a.achievement}</h4>
+            <p class="text-xs text-text-muted font-bold">{a.student_name} · {a.class_name}</p>
+            <div class="flex gap-2 mt-2">
+              <span class="bg-primary-light text-primary-dark text-[0.7rem] font-bold px-2 py-0.5 rounded">{a.level}</span>
+              <span class="bg-secondary-light text-primary-dark text-[0.7rem] font-bold px-2 py-0.5 rounded">{a.year}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

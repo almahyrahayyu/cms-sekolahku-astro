@@ -1,0 +1,40 @@
+---
+// src/layouts/ServiceLayout.astro
+import Layout from './Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileDrawer from '../components/MobileDrawer.astro';
+import Footer from '../components/Footer.astro';
+import settings from '../../data/settings.yml';
+
+interface Props {
+  title: string;
+  badge: string;
+  subtitle: string;
+  icon: string;
+}
+const { title, badge, subtitle, icon } = Astro.props;
+---
+<Layout title={`${title} — ${settings.site_name}`} description={subtitle}>
+  <TopBar />
+  <Header />
+  <Navbar />
+  <MobileDrawer />
+
+  <main class="flex-1">
+    <div class="bg-gradient-to-r from-primary to-primary-dark px-6 py-10 text-center text-white">
+      <span class="inline-flex items-center gap-1.5 bg-white/20 text-xs font-bold px-3 py-1 rounded-full mb-2">
+        <i class:list={['fas', `fa-${icon}`]}></i> {badge}
+      </span>
+      <h1 class="text-3xl font-extrabold">{title}</h1>
+      <p class="text-white/80 mt-2 text-sm max-w-xl mx-auto">{subtitle}</p>
+    </div>
+
+    <div class="max-w-2xl mx-auto px-5 py-9">
+      <slot />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

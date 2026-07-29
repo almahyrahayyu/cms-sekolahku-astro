@@ -1,0 +1,14 @@
+testimonials:
+  - name: "Ibu Ratna"
+    role: "Orang Tua Siswa Kelas IV"
+    photo: ""
+    message: "Anak saya sangat senang bersekolah di SDN 3 Ngraji. Guru-gurunya ramah dan perhatian terhadap perkembangan siswa."
+    rating: 5
+    show: true
+
+  - name: "Bpk. Joko"
+    role: "Orang Tua Siswa Kelas I"
+    photo: ""
+    message: "Sekolah yang nyaman dan lingkungannya bersih. Program tahfidz sangat membantu pembentukan karakter anak."
+    rating: 5
+    show: true

@@ -1,0 +1,16 @@
+---
+// src/components/StatsStrip.astro
+import settings from '../../data/settings.yml';
+---
+<section class="bg-primary-dark px-6 py-6">
+  <div class="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+    {settings.hero_stats.map((stat: any) => (
+      <div class="text-white">
+        <div class="font-display text-[2rem] font-extrabold text-secondary leading-tight">
+          <i class:list={['fas', `fa-${stat.icon}`, 'mr-2 text-lg']}></i>{stat.value}
+        </div>
+        <div class="text-sm font-bold opacity-90">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+</section>

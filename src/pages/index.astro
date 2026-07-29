@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileDrawer from '../components/MobileDrawer.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import ProfileSection from '../components/ProfileSection.astro';
+import Principal from '../components/Principal.astro';
+import Programs from '../components/Programs.astro';
+import Extracurriculars from '../components/Extracurriculars.astro';
+import TeachersGrid from '../components/TeachersGrid.astro';
+import Achievements from '../components/Achievements.astro';
+import Testimonials from '../components/Testimonials.astro';
+import NewsGrid from '../components/NewsGrid.astro';
+import Events from '../components/Events.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import ContactSection from '../components/ContactSection.astro';
+import settings from '../../data/settings.yml';
+import { getCollection } from 'astro:content';
+
+const s = settings.sections;
+
+const newsPosts = (await getCollection('news', ({ data }) => data.published === true))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((post) => ({ ...post, slug: post.id }));
+
+const eventPosts = (await getCollection('events'))
+  .sort((a, b) => a.data.date_start.valueOf() - b.data.date_start.valueOf())
+  .map((ev) => ({ ...ev, slug: ev.id }));
+---
+<Layout title={settings.site_name} description={settings.meta_description}>
+  <TopBar />
+  <Header />
+  <Navbar />
+  <MobileDrawer />
+
+  <main class="flex-1">
+    {s.hero && <Hero />}
+    {s.hero && <StatsStrip />}
+    {s.profile && <ProfileSection />}
+    {s.principal && <Principal />}
+    {s.programs && <Programs />}
+    {s.extracurriculars && <Extracurriculars />}
+    {s.teachers && <TeachersGrid />}
+    {s.achievements && <Achievements />}
+    {s.testimonials && <Testimonials />}
+    {s.news && <NewsGrid posts={newsPosts} />}
+    {s.events && <Events events={eventPosts} />}
+    {s.gallery && <GalleryGrid />}
+    {s.faq && <FaqAccordion />}
+    {s.contact && <ContactSection />}
+  </main>
+
+  <Footer />
+</Layout>

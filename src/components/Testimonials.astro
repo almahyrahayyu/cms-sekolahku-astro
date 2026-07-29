@@ -1,0 +1,30 @@
+---
+// src/components/Testimonials.astro
+import testimonials from '../../data/testimonials.yml';
+import SectionTitle from './SectionTitle.astro';
+const items = testimonials.testimonials.filter((t: any) => t.show);
+---
+<section class="max-w-[1100px] mx-auto px-5 py-9">
+  <SectionTitle title="Testimoni" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {items.map((t: any) => (
+      <div class="bg-white rounded-card p-6 shadow-card border border-primary/10">
+        <div class="flex gap-1 mb-3">
+          {Array.from({ length: t.rating }).map(() => (
+            <i class="fas fa-star text-secondary"></i>
+          ))}
+        </div>
+        <p class="text-sm leading-relaxed italic mb-4">"{t.message}"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-primary-light flex items-center justify-center text-primary overflow-hidden">
+            <img src={t.photo} alt={t.name} class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-user\'></i>'" />
+          </div>
+          <div>
+            <p class="font-extrabold text-primary-dark text-sm">{t.name}</p>
+            <p class="text-xs text-text-muted font-bold">{t.role}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

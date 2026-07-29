@@ -1,0 +1,28 @@
+---
+// src/components/Events.astro
+import SectionTitle from './SectionTitle.astro';
+interface Props { events: any[]; }
+const { events } = Astro.props;
+const upcoming = events.slice(0, 3);
+---
+<section class="max-w-[1100px] mx-auto px-5 py-9">
+  <SectionTitle title="Agenda & Kegiatan" />
+  <div class="space-y-3 max-w-3xl">
+    {upcoming.map((ev: any) => (
+      <div class="bg-white rounded-card p-4 shadow-card border border-primary/10 flex items-center gap-4">
+        <div class="w-16 h-16 bg-primary rounded-xl flex flex-col items-center justify-center text-white shrink-0">
+          <span class="font-display font-extrabold text-xl leading-none">{new Date(ev.data.date_start).getDate()}</span>
+          <span class="text-[0.65rem] font-bold uppercase">{new Date(ev.data.date_start).toLocaleDateString('id-ID', { month: 'short' })}</span>
+        </div>
+        <div class="flex-1">
+          <h4 class="font-extrabold text-primary-dark text-sm">{ev.data.title}</h4>
+          <p class="text-xs text-text-muted font-bold mt-1">
+            <i class="fas fa-clock mr-1 text-primary"></i>{ev.data.time}
+            <span class="mx-2">·</span>
+            <i class="fas fa-map-marker-alt mr-1 text-primary"></i>{ev.data.location}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
