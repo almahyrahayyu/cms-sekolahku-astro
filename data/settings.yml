@@ -9,14 +9,14 @@ contact_address: Dsn. Ngablak Ds. Ngraji Kec. Purwodadi, Kab. Grobogan, Jawa Ten
 contact_hours: 'Senin - Sabtu: 07.00 - 13.00 WIB'
 wa_admin: '628562518518'
 social_facebook: '#'
-social_instagram: '#'
+social_instagram: SD Negeri 3 Ngraji
 social_youtube: '#'
 social_tiktok: '#'
 theme_color: default
 dark_mode: false
 hero_badge: Terakreditasi B · Kurikulum Merdeka
-hero_title: Selamat Datang di SDN 3 Ngraji
-hero_subtitle: Sistem pelayanan daring Bersahabat Akuntabel  Integritas  Komunikatif
+hero_title: Selamat Datang di SIPEDA BAIK SDN 3 Ngraji
+hero_subtitle: Membangun Generasi Cerdas, Berkarakter, dan Berprestasi menuju Masa Depan Gemilang
 hero_image: /images/755868101_18010708523921896_831599174186116871_n.webp
 hero_btn_primary_text: Profil Sekolah
 hero_btn_primary_url: /profil
@@ -32,37 +32,37 @@ hero_stats:
   - label: Prestasi
     value: '15'
     icon: trophy
-contact_address_short: Dsn. Ngablak, Ngraji
-principal:
-  name: Purmana
-  photo: /images/guru/kepsek.jpg
-  role_title: Kepala Sekolah
-  welcome_message: Selamat datang di website resmi SD Negeri 3 Ngraji. Kami berkomitmen memberikan layanan pendidikan terbaik untuk putra-putri kita. Mari bersama-sama membangun masa depan gemilang.
-  education: S1 Pendidikan
-  years_of_service: 15 Thn Mengabdi
+footer_links:
+  - url: /spmb
+    label: SPMB Online
+  - url: /saran
+    label: Kotak Saran
+  - url: /pengaduan
+    label: Pengaduan
+  - url: /faq
+    label: FAQ
+footer_copyright: © 2026 SD Negeri 3 Ngraji — Hak cipta dilindungi.
+footer_description: SD Negeri 3 Ngraji berkomitmen mencetak generasi penerus bangsa yang cerdas, berkarakter, dan berprestasi.
 about:
-  image: /images/sekolah.jpg
-  content_title: Mewujudkan Pendidikan Berkualitas untuk Masa Depan
-  content_1: SD Negeri 3 Ngraji adalah sekolah dasar negeri yang berlokasi di Dusun Ngablak, Desa Ngraji, Kecamatan Purwodadi, Kabupaten Grobogan. Berdiri sejak tahun 1985, sekolah ini telah mencetak ribuan lulusan yang berprestasi.
-  content_2: Dengan Kurikulum Merdeka dan tenaga pengajar profesional, kami siap membentuk karakter dan kompetensi siswa untuk menghadapi masa depan.
-  accreditation: B
-  accreditation_label: BAN-S/M 2023
   highlights:
     - Akreditasi B
     - Kurikulum Merdeka
     - 6 Ruang Kelas
     - Perpustakaan
-footer_description: SD Negeri 3 Ngraji berkomitmen mencetak generasi penerus bangsa yang cerdas, berkarakter, dan berprestasi.
-footer_copyright: © 2026 SD Negeri 3 Ngraji — Hak cipta dilindungi.
-footer_links:
-  - label: SPMB Online
-    url: /spmb
-  - label: Kotak Saran
-    url: /saran
-  - label: Pengaduan
-    url: /pengaduan
-  - label: FAQ
-    url: /faq
+  accreditation_label: BAN-S/M 2023
+  accreditation: B
+  content_2: Dengan Kurikulum Merdeka dan tenaga pengajar profesional, kami siap membentuk karakter dan kompetensi siswa untuk menghadapi masa depan.
+  content_1: SD Negeri 3 Ngraji adalah sekolah dasar negeri yang berlokasi di Dusun Ngablak, Desa Ngraji, Kecamatan Purwodadi, Kabupaten Grobogan. Berdiri sejak tahun 1985, sekolah ini telah mencetak ribuan lulusan yang berprestasi.
+  content_title: Mewujudkan Pendidikan Berkualitas untuk Masa Depan
+  image: /images/sekolah.jpg
+principal:
+  years_of_service: 15 Thn Mengabdi
+  education: S1 Pendidikan
+  welcome_message: Selamat datang di website resmi SD Negeri 3 Ngraji. Kami berkomitmen memberikan layanan pendidikan terbaik untuk putra-putri kita. Mari bersama-sama membangun masa depan gemilang.
+  role_title: Kepala Sekolah
+  photo: /images/guru/kepsek.jpg
+  name: Purmana
+contact_address_short: Dsn. Ngablak, Ngraji
 site_logo_text: SDN 3 Ngraji
 site_url: https://sdn3ngraji.netlify.app
 meta_author: SDN 3 Ngraji
