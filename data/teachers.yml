@@ -1,80 +1,71 @@
 teachers:
-  - name: "Purmana"
-    role: "Kepala Sekolah"
-    photo: "/images/guru/kepsek.jpg"
-    education: "S1 Pendidikan"
-    phone: "08562518518"
-    email: ""
+  - name: Marlina Idayanti, M.Pd.
+    role: Kepala Sekolah
+    photo: /images/guru/kepsek.jpg
+    education: S1 Pendidikan
+    phone: '08562518518'
+    email: ''
     show: true
-
-  - name: "Catur Putra Indra Septiawan"
-    role: "Operator / Guru Kelas"
-    photo: "/images/guru/catur.jpg"
-    education: "S1 Teknik Informatika"
-    phone: ""
-    email: ""
+  - name: Yuli Puji Rahayu, S.Pd.
+    role: Operator Dapodik / Guru Kelas
+    photo: /images/guru/catur.jpg
+    education: S1 Teknik Informatika
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru Kelas 1"
-    role: "Wali Kelas 1"
-    photo: ""
-    education: "S1 PGSD"
-    phone: ""
-    email: ""
+  - name: Dewi Dyah Ayu Safitri, S.Pd.
+    role: Wali Kelas 1
+    photo: ''
+    education: S1 PGSD
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru Kelas 2"
-    role: "Wali Kelas 2"
-    photo: ""
-    education: "S1 PGSD"
-    phone: ""
-    email: ""
+  - name: Yuli Puji Rahayu, S.Pd.
+    role: Wali Kelas 2
+    photo: ''
+    education: S1 PGSD
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru Kelas 3"
-    role: "Wali Kelas 3"
-    photo: ""
-    education: "S1 PGSD"
-    phone: ""
-    email: ""
+  - name: Kartika Dwi Jayanti, S.Pd.SD.
+    role: Wali Kelas 3
+    photo: ''
+    education: S1 PGSD
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru Kelas 4"
-    role: "Wali Kelas 4"
-    photo: ""
-    education: "S1 PGSD"
-    phone: ""
-    email: ""
+  - name: Andi Prasetya, S.Pd., Gr.
+    role: Wali Kelas 4
+    photo: /images/WhatsApp_Image_2025-03-20_at_23.37.06-removebg-preview.png
+    education: S1 PGSD
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru Kelas 5"
-    role: "Wali Kelas 5"
-    photo: ""
-    education: "S1 PGSD"
-    phone: ""
-    email: ""
+  - name: Guru Kelas 5
+    role: Wali Kelas 5
+    photo: ''
+    education: S1 PGSD
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru Kelas 6"
-    role: "Wali Kelas 6"
-    photo: ""
-    education: "S1 PGSD"
-    phone: ""
-    email: ""
+  - name: Guru Kelas 6
+    role: Wali Kelas 6
+    photo: ''
+    education: S1 PGSD
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru PAI"
-    role: "Guru Pendidikan Agama Islam"
-    photo: ""
-    education: "S1 PAI"
-    phone: ""
-    email: ""
+  - name: Guru PAI
+    role: Guru Pendidikan Agama Islam
+    photo: ''
+    education: S1 PAI
+    phone: ''
+    email: ''
     show: true
-
-  - name: "Guru PJOK"
-    role: "Guru Olahraga"
-    photo: ""
-    education: "S1 PJOK"
-    phone: ""
-    email: ""
+  - name: Guru PJOK
+    role: Guru Olahraga
+    photo: ''
+    education: S1 PJOK
+    phone: ''
+    email: ''
     show: true
