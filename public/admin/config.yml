@@ -59,6 +59,57 @@ collections:
               - { label: "Label", name: "label", widget: "string", hint: "Contoh: Siswa, Guru, Prestasi" }
               - { label: "Angka", name: "value", widget: "string", hint: "Contoh: 207, 85+" }
               - { label: "Icon (FontAwesome)", name: "icon", widget: "string", hint: "Contoh: user-graduate, chalkboard-teacher, trophy" }
+          # ── KEPALA SEKOLAH ──
+          - { label: "━━ KEPALA SEKOLAH ━━", name: "principal_divider", widget: "hidden", default: "" }
+          - { label: "Nama Kepala Sekolah", name: "principal.name", widget: "string" }
+          - { label: "Foto Kepala Sekolah", name: "principal.photo", widget: "image", required: false }
+          - { label: "Jabatan", name: "principal.role_title", widget: "string", default: "Kepala Sekolah" }
+          - { label: "Sambutan", name: "principal.welcome_message", widget: "text" }
+          - { label: "Pendidikan", name: "principal.education", widget: "string", required: false }
+          - { label: "Masa Bakti", name: "principal.years_of_service", widget: "string", required: false, hint: "Contoh: 15 Thn Mengabdi" }
+          # ── TENTANG SEKOLAH ──
+          - { label: "━━ TENTANG SEKOLAH ━━", name: "about_divider", widget: "hidden", default: "" }
+          - { label: "Foto Sekolah (Tentang)", name: "about.image", widget: "image", required: false }
+          - { label: "Judul Tentang", name: "about.content_title", widget: "string" }
+          - { label: "Paragraf 1", name: "about.content_1", widget: "text" }
+          - { label: "Paragraf 2", name: "about.content_2", widget: "text" }
+          - { label: "Akreditasi (huruf)", name: "about.accreditation", widget: "string" }
+          - { label: "Label Akreditasi", name: "about.accreditation_label", widget: "string", hint: "Contoh: BAN-S/M 2023" }
+          - label: "Highlight (poin keunggulan)"
+            name: "about.highlights"
+            widget: "list"
+            required: false
+            field: { widget: "string" }
+          # ── DATA POKOK ──
+          - { label: "━━ DATA POKOK ━━", name: "data_pokok_divider", widget: "hidden", default: "" }
+          - { label: "NPSN (Data Pokok)", name: "data_pokok.npsn", widget: "string" }
+          - { label: "Nama Sekolah (Data Pokok)", name: "data_pokok.nama", widget: "string" }
+          - { label: "Status", name: "data_pokok.status", widget: "select", options: ["Negeri", "Swasta"] }
+          - { label: "Jenjang", name: "data_pokok.jenjang", widget: "select", options: ["SD", "MI", "SMP", "MTs", "SMA", "SMK"] }
+          - { label: "Akreditasi", name: "data_pokok.akreditasi", widget: "string" }
+          - { label: "Kurikulum", name: "data_pokok.kurikulum", widget: "string" }
+          - { label: "Waktu Penyelenggaraan", name: "data_pokok.waktu_penyelenggaraan", widget: "string" }
+          - { label: "Kepala Sekolah (Data Pokok)", name: "data_pokok.kepala_sekolah", widget: "string" }
+          - { label: "Operator", name: "data_pokok.operator", widget: "string" }
+          - { label: "Tanggal Berdiri", name: "data_pokok.tanggal_berdiri", widget: "string" }
+          - { label: "No. SK Pendirian", name: "data_pokok.no_sk_pendirian", widget: "string" }
+          - { label: "Jumlah Siswa", name: "data_pokok.jumlah_siswa", widget: "string" }
+          - { label: "Jumlah Guru", name: "data_pokok.jumlah_guru", widget: "string" }
+          - { label: "Jumlah Ruang Kelas", name: "data_pokok.jumlah_ruang_kelas", widget: "string" }
+          - { label: "Alamat", name: "data_pokok.alamat", widget: "string" }
+          - { label: "Desa", name: "data_pokok.desa", widget: "string" }
+          - { label: "Kecamatan", name: "data_pokok.kecamatan", widget: "string" }
+          - { label: "Kabupaten", name: "data_pokok.kabupaten", widget: "string" }
+          - { label: "Provinsi", name: "data_pokok.provinsi", widget: "string" }
+          - { label: "Kode Pos", name: "data_pokok.kode_pos", widget: "string" }
+          - { label: "Telepon", name: "data_pokok.telepon", widget: "string" }
+          - { label: "Email", name: "data_pokok.email", widget: "string" }
+          - { label: "Sumber Listrik", name: "data_pokok.sumber_listrik", widget: "string", required: false }
+          - { label: "Akses Internet", name: "data_pokok.akses_internet", widget: "string", required: false }
+          # ── FOOTER ──
+          - { label: "━━ FOOTER ━━", name: "footer_divider", widget: "hidden", default: "" }
+          - { label: "Deskripsi Footer", name: "footer_description", widget: "text" }
+          - { label: "Copyright", name: "footer_copyright", widget: "string" }
 
   # ============================================
   # P0: NEWS (Berita)
