@@ -1,5 +1,5 @@
 site_name: SD Negeri 3 Ngraji
-site_tagline: Membangun Generasi Cerdas, Berkarakter, dan Berprestasi
+site_tagline: Sistem pelayanan daring Bersahabat Akuntabel  Integritas  Komunikatif
 site_description: SD unggulan di Kecamatan Purwodadi, Kabupaten Grobogan
 npsn: '20313554'
 jenjang: SD
@@ -63,54 +63,54 @@ footer_links:
     url: /pengaduan
   - label: FAQ
     url: /faq
-services:
-  pengaduan: true
-  kotak_saran: true
-  mutasi_keluar: true
-  mutasi_masuk: true
-  spmb: true
-sections:
-  contact: true
-  downloads: true
-  faq: true
-  gallery: true
-  events: true
-  news: true
-  testimonials: true
-  achievements: true
-  teachers: true
-  extracurriculars: true
-  programs: true
-  principal: true
-  profile: true
-  hero: true
-data_pokok:
-  akses_internet: Smartfren
-  sumber_listrik: PLN
-  email: sdn3ngraji@gmail.com
-  telepon: '08562518518'
-  kode_pos: '58151'
-  provinsi: Jawa Tengah
-  kabupaten: Grobogan
-  kecamatan: Purwodadi
-  desa: Ngraji
-  alamat: Dsn. Ngablak Ds. Ngraji Kec. Purwodadi
-  jumlah_ruang_kelas: '6'
-  jumlah_guru: '10'
-  jumlah_siswa: '207'
-  no_sk_pendirian: 421.2/004/01/70/85
-  tanggal_berdiri: 1 November 1985
-  operator: Catur Putra Indra Septiawan
-  kepala_sekolah: Purmana
-  waktu_penyelenggaraan: Sehari Penuh / 6 Hari
-  kurikulum: Kurikulum Merdeka
-  akreditasi: B
-  jenjang: SD
-  status: Negeri
-  nama: SD NEGERI 3 NGRAJI
-  npsn: '20313554'
-meta_description: Website resmi SD Negeri 3 Ngraji, Dusun Ngablak, Desa Ngraji, Kecamatan Purwodadi, Kabupaten Grobogan, Jawa Tengah. NPSN 20313554, Terakreditasi B.
-meta_keywords: sdn 3 ngraji, sekolah purwodadi, sd grobogan, sekolah dasar
-meta_author: SDN 3 Ngraji
-site_url: https://sdn3ngraji.netlify.app
 site_logo_text: SDN 3 Ngraji
+site_url: https://sdn3ngraji.netlify.app
+meta_author: SDN 3 Ngraji
+meta_keywords: sdn 3 ngraji, sekolah purwodadi, sd grobogan, sekolah dasar
+meta_description: Website resmi SD Negeri 3 Ngraji, Dusun Ngablak, Desa Ngraji, Kecamatan Purwodadi, Kabupaten Grobogan, Jawa Tengah. NPSN 20313554, Terakreditasi B.
+data_pokok:
+  npsn: '20313554'
+  nama: SD NEGERI 3 NGRAJI
+  status: Negeri
+  jenjang: SD
+  akreditasi: B
+  kurikulum: Kurikulum Merdeka
+  waktu_penyelenggaraan: Sehari Penuh / 6 Hari
+  kepala_sekolah: Purmana
+  operator: Catur Putra Indra Septiawan
+  tanggal_berdiri: 1 November 1985
+  no_sk_pendirian: 421.2/004/01/70/85
+  jumlah_siswa: '207'
+  jumlah_guru: '10'
+  jumlah_ruang_kelas: '6'
+  alamat: Dsn. Ngablak Ds. Ngraji Kec. Purwodadi
+  desa: Ngraji
+  kecamatan: Purwodadi
+  kabupaten: Grobogan
+  provinsi: Jawa Tengah
+  kode_pos: '58151'
+  telepon: '08562518518'
+  email: sdn3ngraji@gmail.com
+  sumber_listrik: PLN
+  akses_internet: Smartfren
+sections:
+  hero: true
+  profile: true
+  principal: true
+  programs: true
+  extracurriculars: true
+  teachers: true
+  achievements: true
+  testimonials: true
+  news: true
+  events: true
+  gallery: true
+  faq: true
+  downloads: true
+  contact: true
+services:
+  spmb: true
+  mutasi_masuk: true
+  mutasi_keluar: true
+  kotak_saran: true
+  pengaduan: true
