@@ -1,7 +1,7 @@
 ---
-title: "Sambutan Kepala Sekolah"
-slug: "sambutan-kepsek"
-excerpt: "Sambutan dari Kepala Sekolah SD Negeri 3 Ngraji"
+title: Sambutan Kepala Sekolah
+slug: sambutan-kepsek
+excerpt: Sambutan dari Kepala Sekolah SD Negeri 3 Ngraji
 published: true
 ---
 
@@ -15,5 +15,5 @@ Kami berkomitmen untuk terus memberikan layanan pendidikan terbaik bagi putra-pu
 
 Wassalamu'alaikum Warahmatullahi Wabarakatuh.
 
-**Purmana**
-Kepala Sekolah SD Negeri 3 Ngraji
+**Marlina Idayanti, M.Pd.**
+Kepala SD Negeri 3 Ngraji
